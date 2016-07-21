@@ -1,0 +1,124 @@
+extends layout
+
+block content
+  .header
+    p Esta pagina ha sido desarrollada para un proyecto de:
+    img#unitecLogo(src='/images/logoUnitec.png')
+      
+  #book.container.col-lg-6.col-xs-12
+    .registerForm
+      img#bookLogo(src='/images/book.png')
+      p#warning Ingresa los datos solicitados a continuacion para registrar un cliente.
+      
+      form.form-group.row
+        hr
+        fieldset
+          label Nombre del Cliente:
+          div
+            .col-xs-12
+              input.form-control#clientName(type='name' placeholder='Nombre')
+        fieldset          
+          label Documento de Indentidad:
+          div
+            .col-xs-4
+              select#clientIdType.form-control
+                option V
+                option E
+                option RIF
+            .col-xs-8
+              input.form-control#clientIdNumber(type='id' placeholder='Numero de Documento')
+        fieldset
+          label Correo Electronico:
+          div
+            .col-xs-12
+              input.form-control#clientEmail(type='email' placeholder='Correo')
+        fieldset
+          label Procedencia:
+          div
+            .col-xs-12
+              input.form-control#clientOrigin(type='email' placeholder='Correo')
+        hr
+        fieldset
+          label Profesion
+          div
+            .col-xs-12
+              input.form-control#clientProfession(type='text' placeholder='Correo')
+        fieldset
+          label Empresa
+          div
+            .col-xs-12
+              input.form-control#clientEnterprise(type='text' placeholder='Correo')
+        fieldset
+          label Cargo
+          div
+            .col-xs-12
+              input.form-control#clientCharge(type='text' placeholder='Correo')
+        hr
+        fieldset
+          label Sede
+          div
+            .col-xs-12
+              select#hotelHQ.form-control
+                option Carabobo
+                option Dist. Capital
+                option Merida
+                option Barinas
+                option Zulia
+                option Maracay
+                option Cumana
+        fieldset
+          label Tipo de Habitacion
+          div
+            .col-xs-12
+              select#hotelHabType.form-control
+                option Individual
+                option Duo
+                option Familiar
+                option Matrimonial
+                option Presidencial
+        fieldset
+          label Dias de Alojamiento
+          div
+            .col-xs-12
+              input.form-control#lodgingDays(type='number' min=1 max=365)
+        fieldset
+          div 
+            label.checkbox-inline
+              input.checkbox(type="checkbox" value='gym') 
+              label Gimnasio
+            label.checkbox-inline
+              input.checkbox(type="checkbox" value='restaurant') 
+              label Restaurant
+        fieldset
+          label Consumos de Habitacion
+          div
+            .col-xs-12
+              .input-group
+                .input-group-addon Bs.
+                input.cost.form-control#roomCost(type='text' placeholder='Cantidad' value='0' disabled)
+                .input-group-addon .00
+        fieldset
+          label Consumos de Gimnasio
+          div
+            .col-xs-12
+              .input-group
+                .input-group-addon Bs.
+                input.cost.form-control#gymCost(type='text' placeholder='Cantidad' value='0' disabled)
+                .input-group-addon .00
+        fieldset
+          label Consumos de Restaurant
+          div
+            .col-xs-12
+              .input-group
+                .input-group-addon Bs.
+                input.cost.form-control#restaurantCost(type='text' placeholder='Cantidad' value='0' disabled)
+                .input-group-addon .00
+        div(style='text-align:center;')
+          br
+          button.btn.btn-primary#saveClient Guardar
+      
+    
+    
+  #statistics.container.col-lg-6.col-xs-12
+  
+  script(type="text/babel" src="/scripts/statistic.js")
